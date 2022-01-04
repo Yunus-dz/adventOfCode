@@ -6,7 +6,7 @@ class TestDay1:
     def test_part1(self):
 
         # Given
-        filename = 'tests/day1.txt'
+        filename = 'tests/realday1.txt'
 
         # When
         actual_answer = day1.part1(filename)

@@ -1,7 +1,7 @@
-from day_tdd import adder
+from math_utils import adder
 
 
-class TestTDDExample:
+class TestMathUtils:
 
     def test_adder(self):
 
