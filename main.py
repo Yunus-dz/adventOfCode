@@ -1,7 +1,4 @@
-# TODO - note this file is not needed right now
-
-def run():
-    print('hi')
+import day1
 
 if __name__ == '__main__':
-    run()
+    day1.part1('data/realday1.txt')
