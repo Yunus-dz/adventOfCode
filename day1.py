@@ -5,8 +5,8 @@ def part1(filename):
     # TODO - implement the right thing
 
     # read file
-    file1 = open('data/day1.txt', 'r')
-    with open('data/day1.txt', 'r') as file1:
+    # file1 = open('data/day1.txt', 'r')
+    with open(filename, 'r') as file1:
         depths = file1.read().splitlines()
 
         # work something out
@@ -23,11 +23,12 @@ def part1(filename):
         # if depth > prev_depth:
         #     count += 1
         #     match = (prev_depth,depth)
-        #     matches_before.append(match)aaaaaa
+        #     matches_before.append(match)
 
         prev_depth = depth
 
     # difference = list(set(matches) - set(matches_before))
+    print(count)
     return count
 
 
