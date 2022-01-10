@@ -1,2 +1,2 @@
-# adventOfCode
-Advent of code 
+# pythonExercise
+Repo for Python Exercises
