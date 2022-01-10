@@ -130,3 +130,4 @@ dmypy.json
 
 # Stuff specific to this project
 .idea
+.exercism
