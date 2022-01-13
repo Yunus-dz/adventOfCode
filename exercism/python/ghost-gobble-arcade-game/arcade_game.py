@@ -45,7 +45,9 @@ def win(has_eaten_all_dots, power_pellet_active, touching_ghost):
     :param touching_ghost:  bool - is the player touching a ghost?
     :return: bool
     """
-    if has_eaten_all_dots and (not power_pellet_active and touching_ghost):
+    if has_eaten_all_dots and not(power_pellet_active or touching_ghost):
+        return True
+    elif has_eaten_all_dots and power_pellet_active and touching_ghost:
         return True
     else:
-        return false
+        return False
