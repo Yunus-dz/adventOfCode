@@ -1,9 +1,8 @@
 """ Meltdown Mitigation exercise """
 
 
-def is_criticality_balanced():
+def is_criticality_balanced(temperature, neutrons_emitted):
     """Verify criticality is balanced.
-
     :param temperature: temperature value (integer or float)
     :param neutrons_emitted: number of neutrons emitted per second (integer or float)
     :return:  boolean True if conditions met, False if not
@@ -14,10 +13,12 @@ def is_criticality_balanced():
     - The product of temperature and neutrons emitted per second is less than 500000.
     """
 
-    pass
+    if temperature < 800 and neutrons_emitted > 500:
+        return (temperature * neutrons_emitted) < 5e5
+    return False
 
 
-def reactor_efficiency():
+def reactor_efficiency(voltage, current, theoretical_max_power):
     """Assess reactor efficiency zone.
 
     :param voltage: voltage value (integer or float)
@@ -36,11 +37,18 @@ def reactor_efficiency():
     (generated power/ theoretical max power)*100
     where generated power = voltage * current
     """
+    generated_power = voltage * current
+    efficiency = (generated_power / theoretical_max_power) * 100
+    if efficiency >= 80:
+        return 'green'
+    if efficiency >= 60:
+        return 'orange'
+    if efficiency >= 30:
+        return 'red'
+    return 'black'
 
-    pass
 
-
-def fail_safe():
+def fail_safe(temperature, neutrons_produced_per_second, threshold):
     """Assess and return status code for the reactor.
 
     :param temperature: value of the temperature (integer or float)
@@ -52,5 +60,13 @@ def fail_safe():
     - `temperature * neutrons per second` +/- 10% of `threshold` == 'NORMAL'
     - `temperature * neutrons per second` is not in the above-stated ranges ==  'DANGER'
     """
+    criticality = temperature * neutrons_produced_per_second
+    low_threshold = 0.9 * threshold
+    high_threshold = 1.1 * threshold
 
-    pass
+    if temperature * neutrons_produced_per_second < low_threshold:
+        return 'LOW'
+
+    if low_threshold <= criticality <= high_threshold:
+        return 'NORMAL'
+    return 'DANGER'
