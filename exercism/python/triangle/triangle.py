@@ -17,15 +17,4 @@ def isosceles(sides):
 def scalene(sides):
     a, b, c = sides
     return triangle(a, b, c) and (a != b != c)
-=======
-def equilateral(sides):
-    pass
 
-
-def isosceles(sides):
-    pass
-
-
-def scalene(sides):
-    pass
->>>>>>> origin/triangle
