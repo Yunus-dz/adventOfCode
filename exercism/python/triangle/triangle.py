@@ -13,7 +13,7 @@ def isosceles(sides):
     a, b, c = sides
     return triangle(a, b, c) and (a == b or b == c or a == c)
 
-    
+
 def scalene(sides):
     a, b, c = sides
     return triangle(a, b, c) and (a != b != c)
